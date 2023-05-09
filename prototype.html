@@ -1,0 +1,39 @@
+<!-- validation => verifying
+		client side validation => js validations => form validations
+		1. while submiting
+		2. while typing	-->
+		<!DOCTYPE html>
+<html lang="en">
+		 <head>
+		  <meta charset="UTF-8">
+		  <title>Document</title>
+		 </head>
+		 <body>
+			<form id="f" action="text.php">
+				<label>Fullname</label> <br>
+				<input type="text" id="fna" name="fna"/> <br>
+				<label>Contact number</label> <br>
+				<input type="text" id="phone" name="phone" maxlength="10"/> <br>
+				<label>EmailId</label> <bR>
+				<input type="email" id="em" name="em"/> <br>
+				<button>Submit</button>
+			</form>
+			<script>
+				//checking full name
+				document.getElementById("fna").onkeypress=function(fna){
+															let ch=fna.which;	//it returns ASCII
+															//				 'A'               'Z'              'a'                    'z'         space
+															if( !((ch>=65&&ch<=90)||(ch>=97&&ch<=122)||ch==32) )
+														fna.preventDefault()
+												};
+
+		//checking phone
+		document.getElementById("phone").onkeypress=function(ph){
+													let ch=ph.which;	//it returns ASCII
+						//				0                    9
+						if( !(ch>=48&&ch<=57))
+														ph.preventDefault()
+										};
+	</script>
+ </body>
+</html>		
